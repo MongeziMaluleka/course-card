@@ -19,13 +19,13 @@ const CourseCard = ({
     courseImage = null,
     author = "Mongezi Maluleka",
     authorImage = null,
+    tag = "Learning",
+    date = "Published 21 Dec 2023"
 }) => {
     return (
-        <div className ="course-card-container">
-
-
-            <article className="course-card" aria-label={`Course: ${courseName}`}>
-                {/* Course Image - uses local default if no image provided */}
+        <div className="course-card-wrapper">
+            <article className="course-card">
+               {/* Course Image - uses local default if no image provided */}
                 <div className="course-image-container">
                     <img 
                         src={courseImage || defaultCourseImage} 
@@ -34,8 +34,11 @@ const CourseCard = ({
                         loading="lazy"
                     />
                 </div>
+                <span className="learning-tag">{tag}</span>
+                <p className="published-date">{date}</p>
                 
                 <div className="course-details">
+
                     <h2 className="course-title">{courseName}</h2>
                     <p className="course-description">{courseDescription}</p>
                     

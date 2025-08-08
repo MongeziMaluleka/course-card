@@ -1,19 +1,42 @@
-/* body {
-  background-color: #F4D04E; The yellow color from your design
-} */
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: grid;
+    /* place-items: center; */
+    background-color: #F4D04E;
+}
+
+.card-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* width: 100%; */
+}
+/* CourseCard Container Styles */
+.course-card-container {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    padding: 1rem;
+}
 /* Card container */
 .course-card {
-    --primary-color: #2563eb;
-    --text-color: #334155;
-    --light-gray: #f8fafc;
+    --primary-color: #111;
+    --secondary-color: #7f7f7f;
+    --accent-color: #F4D04E;
+    --white: #ffffff;
     
-    width: min(100%, 320px);
-    background: white;
-    border-radius: 0.75rem;
+    width: 100%;
+    max-width: 384px;
+    background: var(--white);
+    border-radius: 20px;
+    border: 1px solid var(--primary-color);
+    box-shadow: 8px 8px 0 0 var(--primary-color);
     overflow: hidden;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    font-family: 'Inter', system-ui, sans-serif;
+    padding: 24px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
 }
 
 .course-card:hover {
@@ -23,9 +46,14 @@
 
 /* Image container with aspect ratio */
 .course-image-container {
+    width: 100%;
+    border-radius: 10px;
     position: relative;
-    padding-top: 56.25%; /* 16:9 aspect ratio */
-    background: var(--light-gray);
+    padding-top: 56.25%; 
+    /* 16:9 aspect ratio */
+    /* background: var(--light-gray); */
+    overflow: hidden;
+    margin-bottom: 24px;
 }
 
 .course-image {
@@ -34,43 +62,60 @@
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    display: block;
+    /* object-fit: cover; */
+}
+.learner-tag {
+    display: inline-block;
+    background: var(--accent-color);
+    color: var(--primary);
+    font-weight: 800;
+    padding: 14px 12px;
+    border-radius: 4px;
+    margin-bottom: 12px;
+
 }
 
+.published-date {
+    font-size: 24px;
+    font-weight: 800;
+    color:var(--primary-color)
+}
 /* Course content */
 .course-details {
     padding: 1.25rem;
 }
 
 .course-title {
-    font-size: 1.125rem;
-    font-weight: 600;
-    color: var(--text-color);
-    margin-bottom: 0.75rem;
-    line-height: 1.375;
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--primary-color);
+    margin-bottom: 12px;
+    transition: color 0.2s ease;
 }
 
 .course-description {
-    color: #64748b;
-    font-size: 0.875rem;
+    font-size: 16px;
+    color: var(--secondary-color);
     line-height: 1.5;
-    margin-bottom: 1.25rem;
+    margin-bottom: 24px;
 }
 
 /* Author section */
 .author-info {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
+    gap: 12px;
 }
 
 .author-image {
+    width: 32px;
     border-radius: 50%;
     border: 2px solid #e2e8f0;
 }
 
 .author-name {
-    font-size: 0.875rem;
+    font-size: 14px;
     font-weight: 500;
-    color: var(--text-color);
+    color: var(--primary-color);
 }

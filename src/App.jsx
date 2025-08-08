@@ -9,13 +9,15 @@ function App() {
             <CourseCard />
             
             {/*show another card component with custom images */}
-            <CourseCard 
+            {/* <CourseCard 
                 courseName="React Fundamentals"
                 courseDescription="Learn React hooks, components, and state management"
+                tag="Completed"
+                date="Published 21 Dec 2023"
                 courseImage={courseimage}
                 author="Andiswa Maluleka"
                 authorImage={Photo}
-            />
+            /> */}
         </div>
     );
 }
